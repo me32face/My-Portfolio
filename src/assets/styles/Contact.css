@@ -1,0 +1,99 @@
+/* Contact.css */
+
+.contact-section {
+  min-height: 100vh;
+  background: linear-gradient(to right, #f0f9ff, #e0f7fa);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+  transition: margin-left 0.3s ease;
+}
+
+/* Sidebar space for medium+ screens */
+@media (min-width: 768px) {
+  .contact-section {
+    margin-left: 200px;
+  }
+}
+
+.contact-wrapper {
+  max-width: 800px;
+  width: 100%;
+  animation: fadeIn 0.5s ease-in-out;
+  text-align: center;
+}
+
+.contact-title {
+  font-size: 2.4rem;
+  color: #0a3d62;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.contact-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: #00bcd4;
+  border-radius: 4px;
+}
+
+.contact-info-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+  color: #0f172a;
+  font-size: 1rem;
+  line-height: 1.7;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.contact-email {
+  color: #0077b6;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-email:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .contact-section {
+    margin-left: 0;
+  }
+
+  .contact-title {
+    font-size: 2rem;
+  }
+
+  .contact-info-card {
+    padding: 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

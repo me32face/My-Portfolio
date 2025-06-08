@@ -1,0 +1,88 @@
+/* HomePage.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Mono&display=swap');
+
+body {
+  margin: 0;
+  color: white;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.homepage-container {
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  padding: 1rem;
+}
+
+.homepage-profile {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  margin-bottom: 1.5rem;
+}
+
+.homepage-name {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.2rem;
+  margin: 0.5rem 0;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.homepage-name::before,
+.homepage-name::after {
+  content: "―";
+  margin: 0 0.4rem;
+}
+
+.homepage-subtitle {
+  font-size: 1.1rem;
+  margin: 0.3rem 0 1.6rem;
+  color: #e5e5e5;
+}
+
+.homepage-icons {
+  display: flex;
+  gap: 1.2rem;
+  font-size: 1.5rem;
+  justify-content: center;
+}
+
+.homepage-icons a {
+  color: white;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.homepage-icons a:hover {
+  transform: scale(1.2);
+  color: #00ffff;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .homepage-profile {
+    width: 120px;
+    height: 120px;
+  }
+
+  .homepage-name {
+    font-size: 1.7rem;
+  }
+
+  .homepage-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .homepage-icons {
+    font-size: 1.2rem;
+    gap: 0.8rem;
+  }
+}

@@ -1,0 +1,53 @@
+import React, { useEffect } from 'react';
+import './App.css';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import Skills from './components/Skills';
+import Experience from './components/Experience';
+import Education from './components/Education';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import HomePage from './components/Home2';
+
+function App() {
+  useEffect(() => {
+    const handleScroll = () => {
+      const isDesktop = window.innerWidth >= 769;
+      const isScrolled = window.scrollY > 80;
+
+      if (isDesktop && isScrolled) {
+        document.body.classList.add('scrolled-active');
+      } else {
+        document.body.classList.remove('scrolled-active');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, []);
+
+  return (
+    <>
+      <Navbar />
+      <main className="app-main">
+        {/* <section  id='home2'><HomePage/></section> */}
+        <section id="home"><Home /></section>
+        <section id="experience"><Experience /></section>
+        <section id="projects"><Projects /></section>
+        <section id="skills"><Skills /></section> 
+        <section id="education"><Education /></section>
+        <section id="contact"><Contact /></section>
+      </main>
+      <Footer />
+    </>
+  );
+}
+
+export default App;

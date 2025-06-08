@@ -1,0 +1,190 @@
+.exp-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+  display: flex;
+  justify-content: center;
+  padding: 4rem 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+.exp-content {
+  width: 100%;
+  max-width: 1000px;
+  animation: fadeSlideIn 0.6s ease-in-out;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.exp-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0a3d62;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.exp-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 4px;
+  background-color: #38b6ff;
+  border-radius: 4px;
+}
+
+.exp-card {
+  background: #ffffff;
+  border-left: 6px solid #38b6ff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.exp-card:hover {
+  transform: translateY(-5px);
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap; /* allow wrapping on small widths */
+}
+
+.exp-role {
+  font-size: 1.4rem;
+  color: #1b4965;
+  font-weight: 600;
+  flex: 1 1 auto; /* grow and shrink */
+  min-width: 200px;
+}
+
+.exp-duration {
+  font-size: 0.9rem;
+  color: #777;
+  white-space: nowrap;
+  flex-shrink: 0; /* prevent shrinking */
+  margin-left: 1rem;
+}
+
+.exp-company {
+  font-style: italic;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.exp-points {
+  padding-left: 1.2rem;
+  color: #333;
+  margin: 0;
+}
+
+.exp-points li {
+  margin-bottom: 0.6rem;
+  position: relative;
+  line-height: 1.6;
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+.exp-points li::before {
+  content: "✔";
+  color: #38b6ff;
+  font-size: 0.9rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Animations */
+@keyframes fadeSlideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+
+/* Small phones */
+@media (max-width: 480px) {
+  .exp-wrapper {
+    padding: 3rem 1rem;
+  }
+
+  .exp-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .exp-role {
+    font-size: 1.1rem;
+  }
+
+  .exp-duration {
+    font-size: 0.8rem;
+    margin-left: 0;
+    margin-top: 0.3rem;
+  }
+
+  .exp-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .exp-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .exp-points li {
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  .exp-wrapper {
+    padding: 4rem 2rem;
+  }
+
+  .exp-title {
+    font-size: 2.1rem;
+  }
+
+  .exp-role {
+    font-size: 1.3rem;
+  }
+
+  .exp-duration {
+    font-size: 0.85rem;
+  }
+
+  .exp-card {
+    padding: 1.8rem 1.5rem;
+  }
+}
+
+/* Desktop and larger */
+@media (min-width: 769px) {
+  .exp-main-content {
+    transition: margin-left 0.4s ease;
+  }
+
+  body.scrolled-active .exp-main-content {
+    margin-left: 200px; /* Adjust according to your sidebar width */
+  }
+}

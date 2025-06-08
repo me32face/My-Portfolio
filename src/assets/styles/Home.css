@@ -1,0 +1,104 @@
+.home-main-content {
+  transition: margin-left 0.4s ease;
+  background-color: #f9f9f9;
+}
+
+.MERN-img{
+  width: 500px;
+  height: 250px;
+}
+
+@media (min-width: 769px) {
+  body.scrolled-active .home-main-content {
+    background-color: #f9f9f9 !important;
+    margin-left: 200px;
+  }
+}
+
+.home-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 5rem;
+  background: linear-gradient(to right, #f9f9f9, #e6f0f3);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.home-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  animation: slideUp 0.5s ease forwards;
+}
+
+.home-subheading {
+  font-size: 1.25rem;
+  color: #555;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  animation: slideUp 0.6s ease forwards;
+}
+
+.highlight {
+  color: #38b6ff;
+  font-weight: 600;
+}
+
+.cta-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #38b6ff;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  animation: slideUp 0.7s ease forwards;
+}
+
+.cta-button:hover {
+  background-color: #1f8ec0;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    background-color: #ffffff;
+  }
+  to {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-heading {
+    font-size: 2rem;
+  }
+
+  .home-subheading {
+    font-size: 1.1rem;
+  }
+
+  .cta-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+  }
+}
