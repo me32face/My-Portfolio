@@ -14,7 +14,7 @@ function HireMe() {
 
           <div className="hireme-buttons">
             <a
-              href="/resume.pdf"
+              href="/Akshay_A_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="hireme-btn hireme-view"
@@ -22,7 +22,7 @@ function HireMe() {
               View Resume
             </a>
             <a
-              href="/resume.pdf"
+              href="/Akshay_A_Resume.pdf"
               download
               className="hireme-btn hireme-download"
             >
