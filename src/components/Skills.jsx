@@ -5,7 +5,7 @@ function Skills() {
   return (
     <section id="skills" className="skills-wrapper" tabIndex={-1}>
       <div className="skills-content">
-        <h2 className="skills-title">Technical Skills</h2>
+        <h2 className="skills-title">Technical <span>Skills</span></h2>
 
         <div className="skills-grid">
           {/* Frontend */}
@@ -76,7 +76,7 @@ function Skills() {
               </div>
               {/* Common icons for these */}
               <div className="skill-badge" tabIndex={0}>
-                <img src="https://cdn-icons-png.flaticon.com/512/109/109612.png" alt="Cloud" />
+                <img src="https://cdn-icons-png.flaticon.com/512/4144/4144269.png" alt="Cloud" />
                 <span>Vercel</span>
               </div>
             </div>
@@ -119,7 +119,7 @@ function Skills() {
         </div>
 
         {/* Soft Skills */}
-        <h2 className="skills-title soft-title">Soft Skills</h2>
+        <h2 className="skills-title soft-title">Soft <span>Skills</span></h2>
         <ul className="soft-skills-list" aria-label="Soft skills list">
           <li tabIndex={0}>🤝 Teamwork</li>
           <li tabIndex={0}>🔄 Adaptability</li>

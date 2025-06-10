@@ -1,16 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+
+
 .home-main-content {
   transition: margin-left 0.4s ease;
   background-color: #f9f9f9;
-}
-
-.MERN-img{
-  width: 500px;
-  height: 250px;
+  font-family: 'Poppins', sans-serif;
 }
 
 @media (min-width: 769px) {
   body.scrolled-active .home-main-content {
-    background-color: #f9f9f9 !important;
     margin-left: 200px;
   }
 }
@@ -19,51 +18,75 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  gap: 2.5rem;
   min-height: 100vh;
-  padding: 5rem;
-  background: linear-gradient(to right, #f9f9f9, #e6f0f3);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 4rem 2rem;
+  background: radial-gradient(
+    circle at top left,
+    #e6f0f3 0%,
+    #f9f9f9 50%,
+    #ffffff 100%
+  );
   color: #2c3e50;
   animation: fadeIn 0.6s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
 }
 
-.home-heading {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+.home-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-profile-img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  object-fit: cover;
+}
+
+.home-profile-img:hover {
+  transform: scale(1.05);
+}
+
+.home-icon-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.home-name {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3.2rem;
   color: #2c3e50;
-  animation: slideUp 0.5s ease forwards;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
-.home-subheading {
-  font-size: 1.25rem;
-  color: #555;
-  max-width: 600px;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-  animation: slideUp 0.6s ease forwards;
+
+.home-social-icons {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.8rem;
 }
 
-.highlight {
+.home-social-icons a {
+  color: #2c3e50;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.home-social-icons a:hover {
+  transform: scale(1.2);
   color: #38b6ff;
-  font-weight: 600;
-}
-
-.cta-button {
-  padding: 0.75rem 1.5rem;
-  background-color: #38b6ff;
-  color: #fff;
-  font-weight: 600;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  animation: slideUp 0.7s ease forwards;
-}
-
-.cta-button:hover {
-  background-color: #1f8ec0;
 }
 
 /* Animations */
@@ -87,18 +110,58 @@
   }
 }
 
+/* Dark Theme Support */
+@media (prefers-color-scheme: dark) {
+  .home-main-content {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+  }
+
+  .home-section {
+    background: radial-gradient(
+      circle at top left,
+      #2a2a2a 0%,
+      #1e1e1e 50%,
+      #121212 100%
+    );
+    color: #f1f1f1;
+  }
+
+  .home-name {
+    color: #ffffff;
+  }
+
+  .home-social-icons a {
+    color: #f1f1f1;
+  }
+
+  .home-social-icons a:hover {
+    color: #38b6ff;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
-  .home-heading {
-    font-size: 2rem;
+  .home-section {
+    /* padding-top: calc(3rem + 60px); */
+    padding-bottom: 2rem;
   }
 
-  .home-subheading {
-    font-size: 1.1rem;
+  .home-profile-img {
+    max-width: 150px;
   }
 
-  .cta-button {
-    padding: 0.6rem 1.2rem;
-    font-size: 1rem;
+  .home-name {
+    font-size: 1.6rem;
   }
+
+  .home-social-icons {
+    font-size: 1.5rem;
+    gap: 1rem;
+  }
+}
+
+/* Anchor offset for navbar */
+#home {
+  scroll-margin-top: 100px;
 }

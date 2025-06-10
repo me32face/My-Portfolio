@@ -1,113 +1,27 @@
-/* Reset
+/* Base Styling */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-html {
+  box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fafafa;
-  color: #222;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  color: #2c3e50;
   line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.app-main {
-  max-width: 1100px;
-  margin: 2rem auto 4rem auto;
-  padding: 0 1rem;
-}
-
-section {
-  padding: 4rem 0;
-  border-bottom: 1px solid #ddd;
-}
-
-section:last-child {
-  border-bottom: none;
-}
-
-h1, h2, h3, h4 {
-  color: #222;
-}
-
-h1 {
-  font-size: 2.8rem;
-  margin-bottom: 0.6rem;
-}
-
-h2 {
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-  border-left: 6px solid #4caf50;
-  padding-left: 12px;
-}
-
-h3 {
-  font-size: 1.6rem;
-  margin-bottom: 0.6rem;
-  color: #333;
-}
-
-h4 {
-  font-size: 1.3rem;
-  margin-bottom: 0.4rem;
-  color: #555;
-}
-
-a {
-  color: #4caf50;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-a:hover,
-a:focus {
-  text-decoration: underline;
-}
-
-ul {
-  margin-left: 1.4rem;
-  margin-bottom: 1.2rem;
-  list-style-type: disc;
-  color: #444;
-}
-
-li {
-  margin-bottom: 0.3rem;
-}
-
-@media (max-width: 768px) {
-  .app-main {
-    margin: 1rem;
-    padding: 0 0.5rem;
+/* Dark Theme Support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #f1f1f1;
   }
 
   section {
-    padding: 2.5rem 0;
+    background-color: transparent;
   }
-
-  h1 {
-    font-size: 2.2rem;
-  }
-
-  h2 {
-    font-size: 1.8rem;
-  }
-
-  .skills-container ul li,
-  .experience-item,
-  .education-item,
-  .project-item,
-  .contact-container {
-    padding: 1rem 1.2rem;
-  }
-
-  .soft-skills {
-    gap: 10px;
-  }
-} */
+}

@@ -1,29 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
 
-/* Light Theme */
+/* Default Light Mode */
 :root {
   --primary: #38b6ff;
   --text-color: #1e1e1e;
   --bg-color: #ffffff;
   --card-color: #f1f1f1;
-  --desc-color: #444;
+  --desc-color: #555;
   --shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Dark Theme */
+/* Dark Mode */
 @media (prefers-color-scheme: dark) {
   :root {
     --primary: #38b6ff;
     --text-color: #f9f9f9;
     --bg-color: #121212;
-    --card-color: #1f1f1f;
+    --card-color: #1e1e1e;
     --desc-color: #ccc;
-    --shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+    --shadow: 0 0 30px rgba(0, 0, 0, 0.6);
   }
 }
 
-.exp-main-content {
+.aboutnew-main {
   background-color: var(--bg-color);
   color: var(--text-color);
   min-height: 100vh;
@@ -34,123 +34,125 @@
   align-items: center;
 }
 
+/* Sidebar margin on large screens */
 @media (min-width: 769px) {
-  body.scrolled-active .exp-main-content {
+  body.scrolled-active .aboutnew-main {
     margin-left: 200px;
   }
 }
 
-.exp-wrapper {
+.aboutnew-container {
+  display: flex;
+  flex-wrap: wrap;
   max-width: 1100px;
   margin: auto;
+  gap: 2rem;
   padding: 2rem;
   background: linear-gradient(135deg, var(--bg-color), #eaeaea);
   border-radius: 20px;
   box-shadow: var(--shadow);
-  width: 100%;
 }
 
+/* Dark mode background override */
 @media (prefers-color-scheme: dark) {
-  .exp-wrapper {
+  .aboutnew-container {
     background: linear-gradient(135deg, #1f1f1f, #181818);
   }
 }
 
-.exp-title {
-  font-size: 2.8rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  font-family: 'Dancing Script', cursive;
-  color: var(--primary);
-  text-align: center;
+.aboutnew-left,
+.aboutnew-right {
+  flex: 1;
+  min-width: 280px;
 }
 
-.exp-card {
+.aboutnew-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  font-family: 'Dancing Script', cursive;
+  color: var(--primary);
+}
+
+.aboutnew-title span {
+  color: var(--text-color);
+}
+
+.aboutnew-description {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  color: var(--desc-color);
+}
+
+.aboutnew-card {
   background-color: var(--card-color);
   border-radius: 12px;
-  padding: 2rem;
+  padding: 1.5rem 2rem;
   box-shadow: var(--shadow);
   transition: transform 0.3s ease;
 }
 
-.exp-card:hover {
+.aboutnew-card:hover {
   transform: translateY(-5px);
 }
 
-.exp-role {
-  font-size: 1.4rem;
-  font-weight: 600;
+.aboutnew-card-title {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
   color: var(--primary);
-  margin-bottom: 0.2rem;
 }
 
-.exp-company {
-  font-style: italic;
-  color: var(--desc-color);
-  margin-bottom: 0.8rem;
-}
-
-.exp-duration {
-  font-size: 0.95rem;
-  color: var(--desc-color);
-  margin-bottom: 1.5rem;
-}
-
-.exp-points {
+.aboutnew-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.exp-points li {
-  margin-bottom: 0.8rem;
-  padding-left: 1.5rem;
-  position: relative;
+.aboutnew-list li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.6rem 0;
+  font-size: 1rem;
   color: var(--desc-color);
-  line-height: 1.6;
+  word-break: break-word;
 }
 
-.exp-points li::before {
-  content: '✔';
-  position: absolute;
-  left: 0;
-  color: var(--primary);
-  font-size: 0.9rem;
+.aboutnew-list li strong {
+  color: var(--text-color);
+  min-width: 90px;
+  flex-shrink: 0;
 }
 
-/* Responsive */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-  .exp-title {
-    font-size: 2.2rem;
-  }
-
-  .exp-card {
+  .aboutnew-container {
+    flex-direction: column;
     padding: 1.5rem;
   }
 
-  .exp-role {
-    font-size: 1.2rem;
+  .aboutnew-title {
+    font-size: 2.2rem;
+    text-align: center;
   }
 
-  .exp-duration {
-    font-size: 0.9rem;
+  .aboutnew-description {
+    text-align: center;
   }
 
-  .exp-points li {
-    font-size: 0.95rem;
+  .aboutnew-card {
+    padding: 1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .exp-card {
-    padding: 1.2rem;
+  .aboutnew-list li {
+    font-size: 0.9rem;
+    gap: 0.3rem;
   }
 
-  .exp-title {
-    font-size: 1.8rem;
-  }
-
-  .exp-role {
-    font-size: 1.1rem;
+  .aboutnew-list li strong {
+    min-width: 80px;
   }
 }

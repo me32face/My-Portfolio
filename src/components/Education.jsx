@@ -1,39 +1,55 @@
 import React from 'react';
 import '../assets/styles/Education.css';
 
-function Education() {
+
+const EducationTimeline = () => {
+  const educationData = [
+    {
+      degree: "Diploma in Computer Engineering",
+      board: "State Board of Technical Education, Kerala",
+      institute: "College of Engineering Pathanapuram",
+      year: "2021 – 2024",
+      score: "CGPA: 7.9"
+    },
+    {
+      degree: "Higher Secondary – Science",
+      board: "Board of Higher Secondary Examinations, Kerala",
+      institute: "GHSS Ashthamudi, Kundara, Kollam",
+      year: "2021",
+      score: "Percentage: 79%"
+    },
+    {
+      degree: "SSLC",
+      board: "Kerala State Board of Public Examinations",
+      institute: "GHSS Anchalummoodu",
+      year: "2019",
+      score: "Percentage: 85%"
+    },
+  ];
+
   return (
-    <section className="education-section" id="education">
-      <div className="education-wrapper">
-        <h2 className="education-title">Education</h2>
-
-        <div className="edu-card">
-          <h3 className="edu-degree">Diploma in Robotic Process Automation (RPA)</h3>
-          <p className="edu-details">
-            <em>College of Engineering Pathanapuram, Pathanapuram — Aug 2021 – Aug 2024</em>
-          </p>
-          <p className="edu-score">CGPA: 7.9</p>
-        </div>
-
-        <div className="edu-card">
-          <h3 className="edu-degree">Higher Secondary – Science</h3>
-          <p className="edu-details">
-            <em>GHSS Ashthamudi, Kundara, Kollam — 2021</em>
-          </p>
-          <p className="edu-score">Percentage: 79%</p>
-        </div>
-
-        <div className="edu-card">
-          <h4 className="edu-additional-title">Additional Information</h4>
-          <ul className="edu-list">
-            <li>🛠️ Internships: Keltron – Computer Hardware & Networking</li>
-            <li>🧪 Workshops: Fault Detection & Electrical Machines, Blockchain Technology & IoT</li>
-            <li>🌐 Languages Known: English, Hindi, Malayalam</li>
-          </ul>
+    <div className="edu-timeline-main">
+      <div className="edu-timeline-container">
+        <h2 className="edu-timeline-title">My <span>Education</span></h2>
+        <div className="edu-timeline-wrapper">
+          {educationData.map((edu, index) => (
+            <div
+              key={index}
+              className={`edu-timeline-card ${index % 2 === 0 ? 'left' : 'right'}`}
+            >
+              <div className="edu-content">
+                <h3 className="edu-degree">{edu.degree}</h3>
+                <p className="edu-details">{edu.institute}</p>
+                <p className="edu-details">{edu.board}</p>
+                <p className="edu-details">{edu.year}</p>
+                <p className="edu-score">{edu.score}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-    </section>
+    </div>
   );
-}
+};
 
-export default Education;
+export default EducationTimeline;

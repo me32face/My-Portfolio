@@ -8,7 +8,8 @@ import Education from './components/Education';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import HomePage from './components/Home2';
+import About from './components/About'
+import HireMe from './components/HireMe';
 
 function App() {
   useEffect(() => {
@@ -39,11 +40,13 @@ function App() {
       <main className="app-main">
         {/* <section  id='home2'><HomePage/></section> */}
         <section id="home"><Home /></section>
+        <section id="about"><About /></section>
         <section id="experience"><Experience /></section>
         <section id="projects"><Projects /></section>
         <section id="skills"><Skills /></section> 
         <section id="education"><Education /></section>
-        <section id="contact"><Contact /></section>
+        <section id="hire"><HireMe /></section>
+        {/* <section id="contact"><Contact /></section> */}
       </main>
       <Footer />
     </>

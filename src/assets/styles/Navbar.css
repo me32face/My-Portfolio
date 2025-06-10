@@ -8,7 +8,7 @@
   background: #fff;
   box-shadow: 0 2px 10px rgb(0 0 0 / 0.1);
   z-index: 9999;
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  /* transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); */
   font-family: 'Inter', sans-serif;
   display: flex;
   justify-content: center;
@@ -259,7 +259,120 @@
     background-color: #3b82f6;
   }
 
+
   .navbar-wrapper.scrolled .navbar-toggle {
     display: none !important;
+  }
+}
+
+/* Hide navbar smoothly on scroll down */
+.nav-hidden {
+  transform: translateY(-100%);
+  transition: transform 0.4s ease;
+}
+
+/* Sidebar transition (when scrolled) */
+.navbar-wrapper.scrolled {
+  transform: translateX(-100%);
+  animation: slideInSidebar 0.5s forwards ease;
+}
+
+/* Slide in sidebar animation */
+@keyframes slideInSidebar {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.navbar-links li a.active {
+  color: #fff;
+  background-color: #3b82f6;
+  padding: 0.3rem 1rem;
+  border-radius: 8px;
+}
+
+.navbar-wrapper.scrolled .navbar-links li a.active {
+  color: #fff;
+  background-color: #3b82f6;
+}
+
+/* 🌙 Dark Theme Styles */
+@media (prefers-color-scheme: dark) {
+  .navbar-wrapper {
+    background: #111;
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+  }
+
+  .navbar-logo {
+    color: #f4f4f4;
+  }
+
+  .navbar-links li a {
+    color: #ddd;
+  }
+
+  .navbar-links li a:hover,
+  .navbar-links li a:focus {
+    color: #3b82f6;
+  }
+
+  .navbar-links li a.active {
+    background-color: #3b82f6;
+    color: #fff;
+  }
+
+  .navbar-toggle .bar {
+    background-color: #eee;
+  }
+
+  .backdrop {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Scrolled Sidebar */
+  .navbar-wrapper.scrolled {
+    background: #1a1a1a;
+    box-shadow: 2px 0 12px rgba(255, 255, 255, 0.05);
+  }
+
+  .navbar-wrapper.scrolled .navbar-logo {
+    color: #3b82f6;
+  }
+
+  .navbar-wrapper.scrolled .navbar-links li a {
+    color: #ccc;
+  }
+
+  .navbar-wrapper.scrolled .navbar-links li a:hover,
+  .navbar-wrapper.scrolled .navbar-links li a:focus {
+    background-color: #3b82f6;
+    color: #fff;
+  }
+}
+
+/* 🌙 Mobile Dark Theme Fix */
+@media (prefers-color-scheme: dark) {
+  @media (max-width: 768px) {
+    .navbar-links {
+      background: #111 !important;
+      box-shadow: 2px 0 12px rgba(255, 255, 255, 0.05);
+    }
+
+    .navbar-links li a {
+      color: #ddd !important;
+    }
+
+    .navbar-links li a.active {
+      background-color: #3b82f6;
+      color: #fff;
+    }
+
+    .navbar-links li a:hover,
+    .navbar-links li a:focus {
+      color: #3b82f6;
+    }
   }
 }

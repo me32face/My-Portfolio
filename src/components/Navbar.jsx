@@ -4,7 +4,10 @@ import '../assets/styles/Navbar.css';
 function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [hideNavbar, setHideNavbar] = useState(true);  // initially hidden at top
+  const [hideNavbar, setHideNavbar] = useState(true);
+  const [activeSection, setActiveSection] = useState('home');
+
+  const sectionIds = ['home', 'about', 'experience', 'projects', 'skills', 'education', 'hire'];
 
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
@@ -16,24 +19,34 @@ function Navbar() {
   };
 
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
+      const currentScrollY = window.scrollY;
+
+      setScrolled(currentScrollY > 81);
+      setHideNavbar(currentScrollY < 700);
+
+      // Scroll Spy logic
+      for (let id of sectionIds) {
+        const section = document.getElementById(id);
+        if (section) {
+          const offsetTop = section.offsetTop;
+          const offsetBottom = offsetTop + section.offsetHeight;
+          if (currentScrollY >= offsetTop - 150 && currentScrollY < offsetBottom - 150) {
+            setActiveSection(id);
+            break;
+          }
+        }
       }
-      // Hide navbar only when at very top
-      if (window.scrollY<700) {
-        setHideNavbar(true);
-      } else {
-        setHideNavbar(false);
-      }
+
+      lastScrollY = currentScrollY;
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Optional: prevent background scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
   }, [open]);
@@ -44,12 +57,17 @@ function Navbar() {
         <div className="navbar-container">
           <div className="navbar-logo">Akshay A</div>
           <ul className={`navbar-links ${open ? 'open' : ''}`}>
-            <li><a href="#home" onClick={(e) => handleNavClick(e, 'home')}>Home</a></li>
-            <li><a href="#experience" onClick={(e) => handleNavClick(e, 'experience')}>Experience</a></li>
-            <li><a href="#projects" onClick={(e) => handleNavClick(e, 'projects')}>Projects</a></li>
-            <li><a href="#skills" onClick={(e) => handleNavClick(e, 'skills')}>Skills</a></li>
-            <li><a href="#education" onClick={(e) => handleNavClick(e, 'education')}>Education</a></li>
-            <li><a href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</a></li>
+            {sectionIds.map((id) => (
+              <li key={id}>
+                <a
+                  href={`#${id}`}
+                  className={activeSection === id ? 'active' : ''}
+                  onClick={(e) => handleNavClick(e, id)}
+                >
+                  {id.charAt(0).toUpperCase() + id.slice(1)}
+                </a>
+              </li>
+            ))}
           </ul>
           <button
             className={`navbar-toggle ${open ? 'open' : ''}`}
