@@ -9,15 +9,15 @@
   justify-content: center;
   align-items: flex-start;
   box-sizing: border-box;
-  transition: margin-left 0.3s ease;
+  /* transition: margin-left 0.3s ease; */
 }
 
 /* Sidebar space for medium+ screens */
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .contact-section {
     margin-left: 200px;
   }
-}
+} */
 
 .contact-wrapper {
   max-width: 800px;

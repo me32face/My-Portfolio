@@ -10,6 +10,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import About from './components/About'
 import HireMe from './components/HireMe';
+import GlassNavbar from './components/GlassNavbar';
 
 function App() {
   useEffect(() => {
@@ -36,9 +37,10 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <main className="app-main">
         {/* <section  id='home2'><HomePage/></section> */}
+        <section id="nav"><GlassNavbar /></section>
         <section id="home"><Home /></section>
         <section id="about"><About /></section>
         <section id="experience"><Experience /></section>
