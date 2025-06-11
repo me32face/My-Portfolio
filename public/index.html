@@ -4,48 +4,118 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/img.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="MERN Developer"
-      content="MERN Full Stack Developer"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
 
+    <!-- Dynamic theme color -->
+    <meta name="theme-color" content="#ffffff" id="theme-color-meta" />
+
+    <!-- SEO Meta -->
+    <meta name="title" content="Akshay A | MERN Stack & RPA Developer Portfolio" />
+    <meta name="description" content="Akshay A - Full Stack Developer specializing in MERN stack (MongoDB, Express, React, Node.js) and RPA automation using UiPath. Projects include TechBlog, Travel Buddy, and more. Open to freelance, remote, or full-time roles." />
+    <meta name="keywords" content="Akshay A, MERN Stack Developer, RPA Developer, React Developer, Full Stack Developer India, UiPath Automation, Web Developer Kerala, Freelance Developer, Node.js, MongoDB, REST API, Portfolio Developer India, JavaScript, GitHub, Vercel, Render, Firebase" />
+    <meta name="author" content="Akshay A" />
+    <link rel="canonical" href="https://portfolio-akshay-244.vercel.app/" />
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/5.png" />
+
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
-
-
+    <!-- PWA Manifest -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Akshay A | MERN Developer | Portfolio</title>
+    <!-- Open Graph Meta -->
+    <meta property="og:title" content="Akshay A | MERN Stack & RPA Developer Portfolio" />
+    <meta property="og:description" content="View Akshay's MERN and RPA projects like TechBlog and Travel Buddy. Built with React, Node.js, MongoDB, UiPath, and deployed on Vercel and Render." />
+    <meta property="og:image" content="https://portfolio-akshay-244.vercel.app/banner.jpg" />
+    <meta property="og:url" content="https://portfolio-akshay-244.vercel.app/" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Meta -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Akshay A | MERN Stack & RPA Developer Portfolio" />
+    <meta name="twitter:description" content="Explore MERN stack projects and RPA automations by Akshay A. Full Stack Developer from Kerala, India." />
+    <meta name="twitter:image" content="https://portfolio-akshay-244.vercel.app/banner.jpg" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Akshay A",
+      "alternateName": "Akshay Anilkumar",
+      "jobTitle": "MERN Stack & RPA Developer",
+      "url": "https://portfolio-akshay-244.vercel.app",
+      "email": "akshay.anilkumar244@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kollam",
+        "addressRegion": "Kerala",
+        "addressCountry": "India"
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "College of Engineering Pathanapuram"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/akshay-a-023a472a4",
+        "https://github.com/me32face"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelancer / Self-employed"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "email": "akshay.anilkumar244@gmail.com",
+          "contactType": "Development"
+        },
+          {
+            "@type": "ContactPoint",
+            "email": "me32face@gmail.com",
+            "contactType": "Personal"
+          }
+      ],
+      "knowsAbout": [
+        "React.js",
+        "Node.js",
+        "MongoDB",
+        "Express.js",
+        "UiPath",
+        "JavaScript",
+        "REST API Development",
+        "Git & GitHub",
+        "Full Stack Development",
+        "Frontend Engineering",
+        "Backend Engineering",
+        "Automation",
+        "Postman",
+        "Firebase",
+        "Deployment with Render and Vercel"
+      ]
+    }
+    </script>
+
+    <title>Akshay A | Full Stack & RPA Developer | MERN, UiPath Portfolio</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <!-- Dynamic Theme Color Script -->
+    <script>
+      const themeMeta = document.getElementById("theme-color-meta");
+      const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      themeMeta.setAttribute("content", isDark ? "#000000" : "#ffffff");
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+      // Listen for theme change
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", e => {
+        themeMeta.setAttribute("content", e.matches ? "#000000" : "#ffffff");
+      });
+    </script>
   </body>
 </html>
