@@ -19,7 +19,7 @@ function About() {
             <h2 className="aboutnew-card-title">Personal Details</h2>
             <ul className="aboutnew-list">
               <li><strong>Name:</strong> Akshay A</li>
-              <li><strong>Email:</strong> akshay.anilkumar244@gmail.com</li>
+              <li><strong>Email:</strong> <span className='custom-list'>akshay.anilkumar244@gmail.com</span></li>
               <li><strong>Phone:</strong> +91 94970 68332</li>
               <li><strong>Location:</strong> Kollam, India</li>
               <li><strong>Profession:</strong> MERN Stack Developer</li>
