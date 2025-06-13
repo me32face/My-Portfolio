@@ -24,7 +24,7 @@ function Projects() {
       title: "TechBlog – A Full Stack Blogging Platform",
       subtitle: "Built with the MERN Stack (MongoDB, Express, React, Node.js)",
       links: [
-        { label: "Live App", icon: <FaGlobe />, url: "https://your-live-app-link.com" },
+        { label: "Live App", icon: <FaGlobe />, url: "https://techblog-online.vercel.app" },
         { label: "Frontend Code", icon: <FaCodeBranch />, url: "github.com/me32face/Techblog_2-FrontEnd" },
         { label: "Backend Code", icon: <FaServer />, url: "github.com/me32face/TechBlog_2-Backend" },
         { label: "Project Video Phase 1", icon: <FaLinkedin />, url: "https://www.linkedin.com/posts/akshay-a-023a472a4_mernstack-mongodbatlas-reactjs-activity-7337848744127713280-MUZ_/" }

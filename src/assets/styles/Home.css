@@ -21,7 +21,7 @@
   align-items: center;
   gap: 2.5rem;
   min-height: 100vh;
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
   background: radial-gradient(
     circle at top left,
     #e6f0f3 0%,
@@ -161,7 +161,49 @@
   }
 }
 
-/* Anchor offset for navbar */
-#home {
-  scroll-margin-top: 100px;
+.home-role {
+  font-size: 1.6rem;
+  font-weight: 600;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.role-line1,
+.role-line2 {
+  white-space: nowrap;
+}
+
+.role-emoji {
+  font-size: 1.5rem;
+  display: inline-block;
+}
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  .home-role {
+    flex-direction: column;
+    font-size: 1.4rem;
+    gap: 0.2rem;
+  }
+
+  .role-emoji {
+    font-size: 1.6rem;
+    margin: 0.2rem 0;
+  }
+}
+
+/* Small devices (phones) */
+@media (max-width: 480px) {
+  .home-role {
+    font-size: 1.2rem;
+  }
+
+  .role-emoji {
+    font-size: 1.4rem;
+  }
 }
