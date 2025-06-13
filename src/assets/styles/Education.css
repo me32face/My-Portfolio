@@ -36,11 +36,11 @@
 }
 
 /* Margin for Sidebar */
-@media (min-width: 769px) {
+/* @media (min-width: 769px) {
   body.scrolled-active .edu-timeline-main {
     margin-left: 200px;
   }
-}
+} */
 
 /* Wrapper */
 .edu-timeline-container {

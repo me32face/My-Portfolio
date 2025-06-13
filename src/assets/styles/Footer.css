@@ -10,11 +10,11 @@
 }
 
 /* Apply sidebar offset on desktop */
-@media (min-width: 769px) {
+/* @media (min-width: 769px) {
   body.scrolled-active .footernew-main {
     margin-left: 200px;
   }
-}
+} */
 
 .footernew-container {
   display: flex;

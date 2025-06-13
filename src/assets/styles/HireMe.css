@@ -1,15 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
 
+/* Light Theme */
+:root {
+  --primary: #38b6ff;
+  --text-color: #1e1e1e;
+  --bg-color: #ffffff;
+  --card-color: #f1f1f1;
+  --desc-color: #444;
+  --shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #38b6ff;
+    --text-color: #f9f9f9;
+    --bg-color: #121212;
+    --card-color: #1f1f1f;
+    --desc-color: #ccc;
+    --shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  }
+}
+
 .hireme-main {
   background-color: var(--bg-color);
   color: var(--text-color);
   min-height: 100vh;
   padding: 3rem 1rem;
   font-family: 'Poppins', sans-serif;
+  transition: margin-left 0.4s ease, background 0.4s ease;
   display: flex;
   align-items: center;
 }
+
+/* Sidebar effect */
+/* @media (min-width: 769px) {
+  body.scrolled-active .hireme-main {
+    margin-left: 200px;
+  }
+} */
 
 .hireme-container {
   display: flex;
@@ -41,6 +71,7 @@
   margin-bottom: 1.5rem;
   font-family: 'Dancing Script', cursive;
   color: var(--primary);
+  text-align: center;
 }
 
 .hireme-title span {
@@ -52,12 +83,14 @@
   line-height: 1.8;
   margin-bottom: 1.5rem;
   color: var(--desc-color);
+  text-align: center;
 }
 
 .hireme-buttons {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .hireme-btn {
@@ -66,6 +99,8 @@
   border-radius: 8px;
   text-decoration: none;
   transition: background 0.3s ease;
+  font-size: 1rem;
+  text-align: center;
 }
 
 .hireme-view {
@@ -86,6 +121,15 @@
   background-color: #1e7e34;
 }
 
+.hireme-whatsapp {
+  background-color: #25d366;
+  color: #fff;
+}
+
+.hireme-whatsapp:hover {
+  background-color: #1ebe5b;
+}
+
 .hireme-card {
   background-color: var(--card-color);
   border-radius: 12px;
@@ -102,6 +146,7 @@
   font-size: 1.6rem;
   margin-bottom: 1rem;
   color: var(--primary);
+  text-align: center;
 }
 
 .hireme-list {
@@ -113,6 +158,7 @@
 .hireme-list li {
   margin: 0.6rem 0;
   color: var(--desc-color);
+  text-align: center;
 }
 
 .hireme-list li strong {
@@ -120,7 +166,7 @@
   font-weight: 600;
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
   .hireme-container {
     flex-direction: column;
@@ -129,45 +175,37 @@
 
   .hireme-title {
     font-size: 2.2rem;
-    text-align: center;
   }
 
   .hireme-description {
-    text-align: center;
+    font-size: 1rem;
   }
 
   .hireme-card {
     padding: 1rem;
   }
 
-  .hireme-buttons {
-    justify-content: center;
+  .hireme-btn {
+    width: 100%;
+    max-width: 320px;
   }
 }
 
-.hireme-main {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  min-height: 100vh;
-  padding: 3rem 1rem;
-  font-family: 'Poppins', sans-serif;
-  transition: margin-left 0.4s ease, background 0.4s ease;
-  display: flex;
-  align-items: center;
-}
-
-/* Enable sidebar shift on large screens */
-@media (min-width: 769px) {
-  body.scrolled-active .hireme-main {
-    margin-left: 200px;
+@media (max-width: 480px) {
+  .hireme-title {
+    font-size: 1.8rem;
   }
-}
 
-.hireme-whatsapp {
-  background-color: #25d366;
-  color: #fff;
-}
+  .hireme-description {
+    font-size: 0.95rem;
+  }
 
-.hireme-whatsapp:hover {
-  background-color: #1ebe5b;
+  .hireme-card-title {
+    font-size: 1.3rem;
+  }
+
+  .hireme-btn {
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+  }
 }
