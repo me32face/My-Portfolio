@@ -56,6 +56,7 @@ function Projects() {
   ];
 
   return (
+    <div className='projects-component'>
     <section className="projects-gradient-section" id="projects">
       <div className="projects-container">
         <h2 className="projects-heading">My <span>Projects</span></h2>
@@ -97,6 +98,7 @@ function Projects() {
         ))}
       </div>
     </section>
+    </div>
   );
 }
 
