@@ -20,11 +20,12 @@
 
 .glass-navbar {
   position: fixed;
-  bottom: 28px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   background: var(--glass-bg);
   backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-radius: 30px;
   padding: 12px 30px;
   z-index: 1000;
@@ -35,7 +36,7 @@
 
 .glass-navbar-links {
   display: flex;
-  gap: 25px;
+  gap: 24px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -49,7 +50,7 @@
   align-items: center;
   color: var(--glass-text);
   text-decoration: none;
-  font-size: 16px; /* Standardized across medium and large screens */
+  font-size: 18px;
   transition: all 0.2s ease;
 }
 
@@ -67,20 +68,21 @@
   font-size: 13px;
   margin-top: 4px;
   text-transform: capitalize;
+  white-space: nowrap;
 }
 
-/* Medium & smaller devices */
+/* Medium devices (Tablets) */
 @media screen and (max-width: 768px) {
-  /* .glass-navbar {
-    padding: 8px 20px;
+  .glass-navbar {
+    padding: 10px 22px;
   }
 
   .glass-navbar-links {
     gap: 18px;
-  } */
+  }
 
   .glass-navbar-links li a {
-    font-size: 20px; /* Slightly larger when label is hidden */
+    font-size: 20px;
   }
 
   .glass-navbar-links .label {
@@ -88,14 +90,14 @@
   }
 }
 
-/* Very small devices */
-@media screen and (max-width: 375px) {
+/* Small phones */
+@media screen and (max-width: 480px) {
   .glass-navbar {
-    padding: 6px 14px;
+    padding: 8px 16px;
   }
 
   .glass-navbar-links {
-    gap: 14px;
+    gap: 12px;
   }
 
   .glass-navbar-links li a {
@@ -103,14 +105,15 @@
   }
 }
 
-/* Ultra large displays (no change in font size now) */
+/* Ultra large screens */
 @media screen and (min-width: 1600px) {
   .glass-navbar {
-    padding: 14px 40px;
+    padding: 16px 42px;
   }
 
   .glass-navbar-links li a {
-    font-size: 16px; /* Keep consistent with medium */
+    font-size: 18px;
+
   }
 
   .glass-navbar-links .label {

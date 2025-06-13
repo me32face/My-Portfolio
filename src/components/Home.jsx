@@ -12,7 +12,11 @@ function Home() {
 
         <div className="home-icon-content">
           <h2 className="home-name">Akshay A</h2>
-          <h2>RPA Developer 🛫 MERN Developer</h2>
+          <h3 className="home-role">
+            <span className="role-line1">RPA Developer</span>
+            <span className="role-emoji">🛫</span>
+            <span className="role-line2">MERN Developer</span>
+          </h3>
           <div className="home-social-icons">
             <a   href="https://wa.me/919497068332?text=Hello%20Akshay%2C%20I%20came%20across%20your%20portfolio%20and%20was%20really%20impressed.%20I'd%20like%20to%20connect%20and%20discuss%20further."
               target="_blank" rel="noreferrer">
