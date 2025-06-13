@@ -44,6 +44,7 @@
 .aboutnew-container {
   display: flex;
   flex-wrap: wrap;
+  /* flex-direction: column; */
   max-width: 1100px;
   margin: auto;
   gap: 2rem;
@@ -154,5 +155,12 @@
 
   .aboutnew-list li strong {
     min-width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-list{
+    font-size: 0.7rem !important;
+    display: flex;
   }
 }

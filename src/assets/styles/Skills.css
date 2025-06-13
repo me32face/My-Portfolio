@@ -244,3 +244,7 @@
   font-weight: 600;
   font-size: 1.8rem;
 } */
+
+.violet-icon {
+  filter: invert(25%) sepia(84%) saturate(4683%) hue-rotate(262deg) brightness(94%) contrast(92%);
+}

@@ -44,7 +44,7 @@
 
 /* Wrapper */
 .edu-timeline-container {
-  max-width: 1000px;
+  max-width: 1100px;
   width: 100%;
   padding: 2rem;
   background: linear-gradient(135deg, var(--bg-color), #eaeaea);
@@ -109,13 +109,13 @@
 
 /* Positioning */
 .edu-timeline-card.left {
-  left: 0;
+  left: 30px;
   margin-right: auto;
   transform: translateX(-4%);
 }
 
 .edu-timeline-card.right {
-  right: 0;
+  right: 30px;
   margin-left: auto;
   transform: translateX(4%);
 }
@@ -185,12 +185,12 @@
   .edu-timeline-card {
     width: 100%;
     transform: none !important;
-    margin-bottom: 2rem; /* Increase vertical spacing */
+    margin-bottom: 2rem;
   }
 
   .edu-timeline-card.left,
   .edu-timeline-card.right {
-    margin: 0 auto 2rem auto; /* Apply bottom margin */
+    margin: 0 auto 2rem auto;
   }
 
   .edu-timeline-wrapper::before {
@@ -200,5 +200,18 @@
   .edu-timeline-card::after {
     left: 10px !important;
     right: auto !important;
+    top: 2.02rem;
+  }
+
+  .edu-timeline-card.left{
+    left: 30px;
+  }
+
+  .edu-timeline-card.right{
+    left: 30px;
+  }
+
+  .edu-content{
+    padding: 0 0 0 1rem;
   }
 }

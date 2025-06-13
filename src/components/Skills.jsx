@@ -29,7 +29,7 @@ function Skills() {
                 <span>React.js</span>
               </div>
               <div className="skill-badge" tabIndex={0}>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg" alt="Bootstrap" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg" alt="Bootstrap" className="violet-icon"/>
                 <span>Bootstrap</span>
               </div>
             </div>
@@ -44,7 +44,7 @@ function Skills() {
                 <span>Node.js</span>
               </div>
               <div className="skill-badge" tabIndex={0}>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" />
+                <img src="https://cdn.simpleicons.org/express/FFD700" alt="Express.js" />
                 <span>Express.js</span>
               </div>
               <div className="skill-badge" tabIndex={0}>
@@ -67,7 +67,7 @@ function Skills() {
                 <span>Git</span>
               </div>
               <div className="skill-badge" tabIndex={0}>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+                <img src="https://cdn.simpleicons.org/github/c2c2c2" alt="GitHub" />
                 <span>GitHub</span>
               </div>
               <div className="skill-badge" tabIndex={0}>
@@ -76,7 +76,7 @@ function Skills() {
               </div>
               {/* Common icons for these */}
               <div className="skill-badge" tabIndex={0}>
-                <img src="https://cdn-icons-png.flaticon.com/512/4144/4144269.png" alt="Cloud" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" alt="Vercel" />
                 <span>Vercel</span>
               </div>
             </div>
