@@ -10,7 +10,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --glass-bg: rgba(0, 0, 0, 0.85);
+    --glass-bg: rgba(0, 0, 0, 0);
     --glass-text: #ffffff;
     --glass-active: #38b6ff;
     --glass-hover: #00ffcc;
