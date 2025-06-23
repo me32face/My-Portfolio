@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
+import { Toaster } from 'react-hot-toast';
 import Home from './components/Home';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Education from './components/Education';
 import Projects from './components/Projects';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 import About from './components/About'
 import HireMe from './components/HireMe';
@@ -37,9 +37,9 @@ function App() {
 
   return (
     <>
+      <Toaster position="top-center" />
       {/* <Navbar /> */}
       <main className="app-main">
-        {/* <section  id='home2'><HomePage/></section> */}
         <section id="nav"><GlassNavbar /></section>
         <section id="home"><Home /></section>
         <section id="about"><About /></section>
@@ -48,7 +48,6 @@ function App() {
         <section id="skills"><Skills /></section> 
         <section id="education"><Education /></section>
         <section id="hire"><HireMe /></section>
-        {/* <section id="contact"><Contact /></section> */}
       </main>
       <Footer />
     </>
