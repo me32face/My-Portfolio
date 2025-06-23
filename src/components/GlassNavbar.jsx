@@ -68,6 +68,28 @@ function GlassNavbar() {
     return () => observer.disconnect();
   }, []);
 
+  // Prevent back to internal section — allow only exit
+  useEffect(() => {
+    const initialURL = window.location.href;
+
+    window.history.pushState(null, '', window.location.href);
+
+    const onPopState = () => {
+      if (window.location.href === initialURL) {
+        window.close();
+      } else {
+        window.history.pushState(null, '', window.location.href);
+      }
+    };
+
+    window.addEventListener('popstate', onPopState);
+
+    return () => {
+      window.removeEventListener('popstate', onPopState);
+    };
+  }, []);
+
+  // Scroll to section without modifying URL
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
