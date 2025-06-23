@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import '../assets/styles/GlassNavbar.css';
 import {
   FaHome,
@@ -22,7 +22,10 @@ const sectionData = [
 
 function GlassNavbar() {
   const [activeSection, setActiveSection] = useState('');
+  const [isFooterVisible, setIsFooterVisible] = useState(false);
+  const navbarRef = useRef(null);
 
+  // Section observer for active highlighting
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -44,6 +47,24 @@ function GlassNavbar() {
       if (el) observer.observe(el);
     });
 
+    return () => observer.disconnect();
+  }, []);
+
+  // Observe footer to hide navbar
+  useEffect(() => {
+    const footer = document.querySelector('footer');
+    if (!footer) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsFooterVisible(entry.isIntersecting);
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    observer.observe(footer);
     return () => observer.disconnect();
   }, []);
 
@@ -75,7 +96,10 @@ function GlassNavbar() {
   };
 
   return (
-    <nav className="glass-navbar">
+    <nav
+      ref={navbarRef}
+      className={`glass-navbar ${isFooterVisible ? 'hide-navbar' : ''}`}
+    >
       <ul className="glass-navbar-links">
         {sectionData.map(({ id, label, icon }) => (
           <li key={id}>
