@@ -5,6 +5,13 @@ import '../assets/styles/Education.css';
 const EducationTimeline = () => {
   const educationData = [
     {
+      degree: "Pursuing : Bachelor of Computer Applications (BCA)",
+      board: "Indira Gandhi National Open University (IGNOU)",
+      // institute: "College of Engineering Pathanapuram",
+      year: "July 2025 – Present",
+      // score: "CGPA: 7.9"
+    },
+    {
       degree: "Diploma in Robotic Process Automation (RPA)",
       board: "State Board of Technical Education, Kerala",
       institute: "College of Engineering Pathanapuram",
