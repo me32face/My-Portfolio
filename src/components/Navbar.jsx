@@ -1,19 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import '../assets/styles/Navbar.css';
+import React, { useState, useEffect } from "react";
+import "../assets/styles/Navbar.css";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hideNavbar, setHideNavbar] = useState(true);
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState("home");
 
-  const sectionIds = ['home', 'about', 'experience', 'projects', 'skills', 'education', 'hire'];
+  const sectionIds = [
+    "home",
+    "about",
+    "experience",
+    "projects",
+    "skills",
+    "education",
+    "hire",
+  ];
 
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
     const section = document.getElementById(targetId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({ behavior: "smooth" });
     }
     setOpen(false);
   };
@@ -33,7 +41,10 @@ function Navbar() {
         if (section) {
           const offsetTop = section.offsetTop;
           const offsetBottom = offsetTop + section.offsetHeight;
-          if (currentScrollY >= offsetTop - 150 && currentScrollY < offsetBottom - 150) {
+          if (
+            currentScrollY >= offsetTop - 150 &&
+            currentScrollY < offsetBottom - 150
+          ) {
             setActiveSection(id);
             break;
           }
@@ -43,25 +54,27 @@ function Navbar() {
       lastScrollY = currentScrollY;
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : '';
+    document.body.style.overflow = open ? "hidden" : "";
   }, [open]);
 
   return (
     <>
-      <nav className={`navbar-wrapper ${scrolled ? 'scrolled' : ''} ${hideNavbar ? 'hidden' : ''}`}>
+      <nav
+        className={`navbar-wrapper ${scrolled ? "scrolled" : ""} ${hideNavbar ? "hidden" : ""}`}
+      >
         <div className="navbar-container">
           <div className="navbar-logo">Akshay A</div>
-          <ul className={`navbar-links ${open ? 'open' : ''}`}>
+          <ul className={`navbar-links ${open ? "open" : ""}`}>
             {sectionIds.map((id) => (
               <li key={id}>
                 <a
                   href={`#${id}`}
-                  className={activeSection === id ? 'active' : ''}
+                  className={activeSection === id ? "active" : ""}
                   onClick={(e) => handleNavClick(e, id)}
                 >
                   {id.charAt(0).toUpperCase() + id.slice(1)}
@@ -70,7 +83,7 @@ function Navbar() {
             ))}
           </ul>
           <button
-            className={`navbar-toggle ${open ? 'open' : ''}`}
+            className={`navbar-toggle ${open ? "open" : ""}`}
             aria-label="Toggle menu"
             onClick={() => setOpen(!open)}
           >

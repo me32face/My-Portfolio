@@ -1,53 +1,61 @@
-import React, { useEffect } from 'react';
-import './App.css';
-import Navbar from './components/Navbar';
-import { Toaster } from 'react-hot-toast';
-import Home from './components/Home';
-import Skills from './components/Skills';
-import Experience from './components/Experience';
-import Education from './components/Education';
-import Projects from './components/Projects';
-import Footer from './components/Footer';
-import About from './components/About'
-import HireMe from './components/HireMe';
-import GlassNavbar from './components/GlassNavbar';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import { Toaster } from "react-hot-toast";
+
+// We will overwrite these components next
+import GlassNavbar from "./components/GlassNavbar";
+import Home from "./components/Home";
+import About from "./components/About";
+import Experience from "./components/Experience";
+import Projects from "./components/Projects";
+import Education from "./components/Education";
+import HireMe from "./components/HireMe";
+import Footer from "./components/Footer";
 
 function App() {
+  const [theme, setTheme] = useState("dark");
+
   useEffect(() => {
-    const handleScroll = () => {
-      const isDesktop = window.innerWidth >= 769;
-      const isScrolled = window.scrollY > 80;
-
-      if (isDesktop && isScrolled) {
-        document.body.classList.add('scrolled-active');
-      } else {
-        document.body.classList.remove('scrolled-active');
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', handleScroll);
-    handleScroll();
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll);
-    };
+    // Check local storage or system preference on load
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else {
+      const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      setTheme(isDark ? "dark" : "light");
+    }
   }, []);
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  };
 
   return (
     <>
-      <Toaster position="top-center" />
-      {/* <Navbar /> */}
+      <Toaster
+        position="bottom-right"
+        toastOptions={{
+          style: {
+            background: "var(--bg-color-alt)",
+            color: "var(--text-primary)",
+            border: "1px solid var(--border-color)",
+            boxShadow: "var(--shadow-md)",
+          },
+        }}
+      />
+      <GlassNavbar theme={theme} toggleTheme={toggleTheme} />
       <main className="app-main">
-        <section id="nav"><GlassNavbar /></section>
-        <section id="home"><Home /></section>
-        <section id="about"><About /></section>
-        <section id="experience"><Experience /></section>
-        <section id="projects"><Projects /></section>
-        <section id="skills"><Skills /></section> 
-        <section id="education"><Education /></section>
-        <section id="hire"><HireMe /></section>
+        <Home />
+        <About />
+        <Experience />
+        <Projects />
+        <Education />
+        <HireMe />
       </main>
       <Footer />
     </>

@@ -1,62 +1,57 @@
-import React from 'react';
-import '../assets/styles/Education.css';
+import React from "react";
+import "../assets/styles/Education.css";
+import { FaGraduationCap } from "react-icons/fa";
 
-
-const EducationTimeline = () => {
+function Education() {
   const educationData = [
     {
-      degree: "Pursuing : Bachelor of Computer Applications (BCA)",
-      board: "Indira Gandhi National Open University (IGNOU)",
-      // institute: "College of Engineering Pathanapuram",
+      id: 1,
+      degree: "Bachelor of Computer Applications (BCA)",
+      institute: "Indira Gandhi National Open University (IGNOU)",
+      status: "Pursuing",
       year: "July 2025 – Present",
-      // score: "CGPA: 7.9"
     },
     {
+      id: 2,
       degree: "Diploma in Robotic Process Automation (RPA)",
-      board: "State Board of Technical Education, Kerala",
-      institute: "College of Engineering Pathanapuram",
+      institute: "State Board of Technical Education, Kerala",
+      location: "College of Engineering Pathanapuram",
       year: "2021 – 2024",
-      score: "CGPA: 7.9"
+      score: "CGPA: 7.9",
     },
     {
+      id: 3,
       degree: "Higher Secondary – Science",
-      board: "Board of Higher Secondary Examinations, Kerala",
-      institute: "GHSS Ashthamudi, Kundara, Kollam",
+      institute: "Board of Higher Secondary Examinations, Kerala",
+      location: "GHSS Ashthamudi, Kundara, Kollam",
       year: "2021",
-      score: "Percentage: 79%"
-    },
-    {
-      degree: "SSLC",
-      board: "Kerala State Board of Public Examinations",
-      institute: "GHSS Anchalummoodu",
-      year: "2019",
-      score: "Percentage: 85%"
+      score: "79%",
     },
   ];
 
   return (
-    <div className="edu-timeline-main">
-      <div className="edu-timeline-container">
-        <h2 className="edu-timeline-title">My <span>Education</span></h2>
-        <div className="edu-timeline-wrapper">
-          {educationData.map((edu, index) => (
-            <div
-              key={index}
-              className={`edu-timeline-card ${index % 2 === 0 ? 'left' : 'right'}`}
-            >
-              <div className="edu-content">
-                <h3 className="edu-degree">{edu.degree}</h3>
-                <p className="edu-details">{edu.institute}</p>
-                <p className="edu-details">{edu.board}</p>
-                <p className="edu-details">{edu.year}</p>
-                <p className="edu-score">{edu.score}</p>
-              </div>
+    <div className="section-container" id="education">
+      <h2 className="section-title">Education</h2>
+
+      <div className="edu-grid">
+        {educationData.map((edu) => (
+          <div className="edu-card glass-card" key={edu.id}>
+            <div className="edu-icon-wrapper">
+              <FaGraduationCap className="edu-icon" />
             </div>
-          ))}
-        </div>
+            <div className="edu-content">
+              <span className="edu-year">{edu.year}</span>
+              <h3 className="edu-degree">{edu.degree}</h3>
+              <h4 className="edu-institute">{edu.institute}</h4>
+              {edu.location && <p className="edu-location">{edu.location}</p>}
+              {edu.score && <p className="edu-score">Score: {edu.score}</p>}
+              {edu.status && <p className="edu-score status">{edu.status}</p>}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
-};
+}
 
-export default EducationTimeline;
+export default Education;

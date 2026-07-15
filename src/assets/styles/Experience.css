@@ -1,156 +1,376 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
-
-/* Light Theme */
-:root {
-  --primary: #38b6ff;
-  --text-color: #1e1e1e;
-  --bg-color: #ffffff;
-  --card-color: #f1f1f1;
-  --desc-color: #444;
-  --shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+/* src/assets/styles/Experience.css */
+.experience-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem 0 3rem;
 }
 
-/* Dark Theme */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary: #38b6ff;
-    --text-color: #f9f9f9;
-    --bg-color: #121212;
-    --card-color: #1f1f1f;
-    --desc-color: #ccc;
-    --shadow: 0 0 20px rgba(255, 255, 255, 0.05);
-  }
+.experience-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
 }
 
-.exp-main-content {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  min-height: 100vh;
-  padding: 3rem 1rem;
-  font-family: 'Poppins', sans-serif;
-  transition: margin-left 0.4s ease, background 0.4s ease;
+.experience-card {
+  padding: 2.5rem;
+  border-radius: 20px;
+  position: relative;
+  transition:
+    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.experience-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent-color);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.4s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.experience-card:hover::before {
+  transform: scaleY(1);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.5rem;
+}
+
+.experience-title-group {
+  flex: 1;
+}
+
+.experience-role {
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.experience-company {
+  font-size: 1.2rem;
+  color: var(--accent-color);
+  font-weight: 600;
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 
-/* @media (min-width: 769px) {
-  body.scrolled-active .exp-main-content {
-    margin-left: 200px;
-  }
-} */
-
-.exp-wrapper {
-  max-width: 1100px;
-  margin: auto;
-  padding: 2rem;
-  background: linear-gradient(135deg, var(--bg-color), #eaeaea);
-  border-radius: 20px;
-  box-shadow: var(--shadow);
-  width: 100%;
+.icon-company,
+.icon-calendar {
+  color: var(--accent-color);
+  font-size: 1.1rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  .exp-wrapper {
-    background: linear-gradient(135deg, #1f1f1f, #181818);
-  }
-}
-
-.exp-title {
-  font-size: 2.8rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  font-family: 'Dancing Script', cursive;
-  color: var(--primary);
-  text-align: center;
-}
-
-.exp-card {
-  background-color: var(--card-color);
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: var(--shadow);
-  transition: transform 0.3s ease;
-}
-
-.exp-card:hover {
-  transform: translateY(-5px);
-}
-
-.exp-role {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--primary);
-  margin-bottom: 0.2rem;
-}
-
-.exp-company {
-  font-style: italic;
-  color: var(--desc-color);
-  margin-bottom: 0.8rem;
-}
-
-.exp-duration {
+.experience-duration {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
   font-size: 0.95rem;
-  color: var(--desc-color);
-  margin-bottom: 1.5rem;
+  font-weight: 500;
+  padding: 6px 16px;
+  border-radius: 50px;
+  background: var(--bg-color-alt);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
 }
 
-.exp-points {
+.experience-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  position: relative;
+  padding-left: 2rem;
+  margin-top: 1.5rem;
+}
+
+/* Timeline Line */
+.experience-projects::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 6px;
+  bottom: 15px;
+  width: 2px;
+  background: var(--border-color);
+  opacity: 0.7;
+}
+
+.project-card {
+  background: var(--bg-color);
+  padding: 1.8rem;
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Project Card Timeline Node */
+.project-card::before {
+  content: "";
+  position: absolute;
+  left: -31px;
+  top: 28px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  border: 2.5px solid var(--bg-color-alt);
+  box-shadow: 0 0 10px var(--shadow-glow);
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.experience-card:hover .project-card {
+  border-color: var(--border-color);
+}
+
+.experience-card:hover .project-card:hover {
+  border-color: var(--accent-color);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  background: var(--bg-color-alt);
+  border-color: var(--accent-color);
+}
+
+.project-card:hover::before {
+  background: var(--text-primary);
+  box-shadow: 0 0 14px var(--accent-hover);
+  transform: scale(1.25);
+}
+
+.project-name {
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+
+.project-points {
   list-style: none;
-  padding: 0;
+  padding-left: 0;
   margin: 0;
 }
 
-.exp-points li {
+.project-points li {
   margin-bottom: 0.8rem;
-  padding-left: 1.5rem;
   position: relative;
-  color: var(--desc-color);
+  padding-left: 1.5rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
   line-height: 1.6;
 }
 
-.exp-points li::before {
-  content: '✔';
+.project-points li:last-child {
+  margin-bottom: 0;
+}
+
+.project-points li::before {
+  content: "▹";
   position: absolute;
   left: 0;
-  color: var(--primary);
-  font-size: 0.9rem;
+  top: 0;
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1.4;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.project-points li:hover::before {
+  transform: translateX(3px);
+  color: var(--text-primary);
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .exp-title {
-    font-size: 2.2rem;
+@media screen and (max-width: 768px) {
+  .experience-card {
+    padding: 2rem 1.5rem;
   }
 
-  .exp-card {
-    padding: 1.5rem;
+  .experience-header {
+    flex-direction: column;
+    gap: 1rem;
   }
 
-  .exp-role {
-    font-size: 1.2rem;
+  .experience-duration-wrapper {
+    width: 100%;
   }
 
-  .exp-duration {
-    font-size: 0.9rem;
+  .experience-projects {
+    padding-left: 1.5rem;
+    gap: 1.5rem;
   }
-
-  .exp-points li {
-    font-size: 0.95rem;
+  .experience-projects::before {
+    left: 4px;
+  }
+  .project-card::before {
+    left: -24px;
+    top: 24px;
+    width: 8px;
+    height: 8px;
   }
 }
 
-@media (max-width: 480px) {
-  .exp-card {
-    padding: 1.2rem;
+@media screen and (max-width: 480px) {
+  .experience-card {
+    padding: 1.5rem 1rem;
   }
+  .experience-role {
+    font-size: 1.4rem;
+  }
+  .experience-company {
+    font-size: 1.05rem;
+    flex-wrap: wrap;
+  }
+  .experience-duration {
+    font-size: 0.85rem;
+    padding: 4px 12px;
+  }
+  .experience-projects {
+    padding-left: 0;
+    gap: 1.25rem;
+  }
+  .experience-projects::before {
+    display: none;
+  }
+  .project-card {
+    padding: 1.25rem;
+  }
+  .project-card::before {
+    display: none;
+  }
+  .project-name {
+    font-size: 1.05rem;
+  }
+}
 
-  .exp-title {
-    font-size: 1.8rem;
-  }
+/* Expandable Details Button and Animation */
+.toggle-details-btn {
+  background: none;
+  border: none;
+  color: var(--accent-color);
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  margin-top: 1rem;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  width: fit-content;
+}
 
-  .exp-role {
-    font-size: 1.1rem;
+.toggle-details-btn:hover {
+  color: var(--accent-hover);
+  background: rgba(56, 189, 248, 0.08);
+  border-color: rgba(56, 189, 248, 0.2);
+}
+
+.btn-icon {
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+.toggle-details-btn:hover .btn-icon {
+  transform: translateY(1px);
+}
+
+/* Animations for expanding points */
+.project-points li {
+  animation: fadeInPoint 0.3s ease forwards;
+}
+
+@keyframes fadeInPoint {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Single Project Consolidated Layout Styles */
+.experience-projects.single-project {
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.experience-projects.single-project::before {
+  display: none;
+}
+
+.single-project-card {
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.single-project-card::before {
+  display: none !important;
+}
+
+.single-project-card .project-name {
+  font-size: 0.95rem;
+  color: var(--accent-color);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+/* Bullet list text hierarchy */
+.point-prefix {
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-right: 0.4rem;
+}
+
+.point-text {
+  color: var(--text-secondary);
+}
+
+/* Add extra breathing room inside card */
+.experience-card {
+  padding-bottom: 3rem;
 }
