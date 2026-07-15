@@ -86,8 +86,12 @@ function GlassNavbar({ theme, toggleTheme }) {
         {sectionData.map(({ id, label, icon }) => (
           <li key={id} className="nav-item">
             <a
+              href={`#${id}`}
               className={`nav-link ${activeSection === id ? "active" : ""}`}
-              onClick={() => scrollToSection(id)}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(id);
+              }}
               aria-label={label}
             >
               {icon}
