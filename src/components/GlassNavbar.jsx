@@ -35,8 +35,8 @@ function GlassNavbar({ theme, toggleTheme }) {
         }
       },
       {
-        threshold: 0.3, // Trigger when 30% of section is visible
-        rootMargin: "-10% 0px -40% 0px",
+        threshold: 0.1, // Lowered threshold for very tall sections
+        rootMargin: "-20% 0px -40% 0px",
       },
     );
 
